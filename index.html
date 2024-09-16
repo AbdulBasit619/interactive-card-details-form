@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./design/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card__front">
+        <img
+          src="./images/bg-card-front.png"
+          alt="Background gradient in the shape of banking card (front side)"
+          class="img__front"
+        />
+
+        <div class="data">
+          <img src="./images/card-logo.svg" alt="Logo" class="logo" />
+          <div class="data__body">
+            <p class="number">0000 0000 0000 0000</p>
+            <p class="name">Jane Appleseed</p>
+            <p class="expiry">
+              <span class="expiry__month">00</span>
+              /
+              <span class="expiry__year">00</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card__back">
+        <img
+          src="./images/bg-card-back.png"
+          alt="banking card (back side)"
+          class="img__back"
+        />
+        <p class="cvc">000</p>
+      </div>
+      <form action="#" class="form" novalidate>
+        <div class="name__container">
+          <label class="heading__input" for="name">Cardholder Name</label>
+          <input
+            type="text"
+            name="name"
+            class="input__name"
+            placeholder="e.g. Jane Appleseed"
+          />
+        </div>
+        <div class="number__container">
+          <label class="heading__input" for="number">Card Number</label>
+          <input
+            type="text"
+            name="number"
+            class="input__number"
+            placeholder="e.g. 1234 5678 9123 0000"
+            pattern="\b\d{4} \d{4} \d{4} \d{4}\b"
+          />
+          <p class="message__error message__error--number d__hidden">
+            Wrong Format, numbers only
+          </p>
+        </div>
+        <div class="date__container">
+          <label class="heading__input" for="date">Exp. Date (MM/YY)</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            name="date"
+            class="input__month"
+            placeholder="MM"
+            pattern="\d{2}"
+          />
+          <input
+            type="text"
+            inputmode="numeric"
+            name="year"
+            class="input__year"
+            placeholder="YY"
+            pattern="\d{2}"
+          />
+          <p class="message__error message__error--expiry d__hidden">
+            Can't be blank
+          </p>
+        </div>
+        <div class="cvc__container">
+          <label class="heading__input" for="cvc">CVC</label>
+
+          <input
+            type="text"
+            inputmode="numeric"
+            name="cvc"
+            class="input__cvc"
+            placeholder="e.g. 123"
+            pattern="\d{3}"
+          />
+          <p class="message__error message__error--cvc d__hidden">
+            Can't be blank
+          </p>
+        </div>
+
+        <button type="submit" class="btn btn__submit">Confirm</button>
+      </form>
+
+      <div class="submitted d__hidden">
+        <div class="confirmed">
+          <img
+            src="./images/icon-complete.svg"
+            alt="Icon complete"
+            class="icon__complete"
+          />
+          <h2 class="heading--secondary">Thank you!</h2>
+          <p class="message__confirm">We've added your card details</p>
+        </div>
+
+        <button class="btn btn__confirm">Continue</button>
+      </div>
+    </div>
+
+    <!-- Completed state start -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.github.com/abdulbasit619" target="_blank"
+        >Abdul Basit</a
+      >.
+    </div>
+
+    <script src="./design/js/script.js"></script>
+  </body>
+</html>
