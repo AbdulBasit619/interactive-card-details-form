@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn {
+  grid-column: 1 / -1;
+  background: none;
+  border: none;
+  outline: none;
+  background-color: $color--very_dark_violet;
+  color: $color--white;
+  width: 100%;
+  padding: 1.2rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &__submit {
+    margin-top: 2rem;
+  }
+}

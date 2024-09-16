@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Global Rest
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $ff-grotesk;
+  font-size: $fsz-p;
+  font-weight: $fw--medium;
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  height: 100vh;
+
+  background-image: url(../../images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+
+  @include grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+  row-gap: 4rem;
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 2rem;
+}

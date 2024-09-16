@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.heading__input {
+  align-self: flex-start;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.message__error {
+  color: $color--errors;
+  font-size: 1.2rem;
+  justify-self: flex-start;
+  align-self: flex-start;
+  grid-column: 1 / -1;
+}
