@@ -12,6 +12,14 @@
 
 html {
   font-size: 62.5%;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 56.25%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -27,11 +35,40 @@ body {
 
   background-image: url(../../images/bg-main-desktop.png);
   background-repeat: no-repeat;
+  background-size: 40vw;
 
   @include grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 5rem;
   row-gap: 4rem;
+
+  @media only screen and (max-width: 1200px) {
+    column-gap: 0;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    background-size: 44vw;
+  }
+
+  @media only screen and (max-width: 900px) {
+    background-size: 48.5vw;
+  }
+
+  @media only screen and (max-width: 800px) {
+    background-size: 52vw;
+  }
+
+  @media only screen and (max-width: 750px) {
+    max-width: 37.5rem;
+    background-image: url(../../images/bg-main-mobile.png);
+    grid-template-columns: 1fr;
+    height: max-content;
+    row-gap: 2rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    background-size: 100%;
+  }
 }
 
 .attribution {

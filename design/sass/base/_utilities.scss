@@ -21,13 +21,10 @@ input {
 
   &:active,
   &:focus {
-    border: 1px solid $color--very_dark_violet;
+    border-width: 1px;
+    border-style: solid;
+    border-image: $gradient--border 1;
   }
-}
-
-.v__hidden {
-  visibility: hidden !important;
-  pointer-events: none;
 }
 
 .d__hidden {

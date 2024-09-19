@@ -1,4 +1,4 @@
-$gradient--border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+$gradient--border: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
 
 $color--errors: hsl(0, 100%, 66%);
 $color--white: hsl(0, 0%, 100%);
@@ -10,4 +10,5 @@ $ff-grotesk: 'Space Grotesk', monospace, sans-serif;
 
 $fsz-p: 1.8rem;
 
+$fw--regular: 400;
 $fw--medium: 500;

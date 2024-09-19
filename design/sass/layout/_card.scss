@@ -7,11 +7,38 @@
     justify-self: flex-end;
     transform: translateX(-10rem);
 
+    @media only screen and (max-width: 1200px) {
+      width: 48rem;
+      transform: translateX(-3rem);
+    }
+
+    @media only screen and (max-width: 1000px) {
+      width: 40rem;
+    }
+
+    @media only screen and (max-width: 900px) {
+      width: 36rem;
+    }
+
+    @media only screen and (max-width: 750px) {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+      z-index: 111;
+      justify-self: center;
+      width: 30rem;
+      transform: translate(-3rem, -4.6rem);
+    }
+
+    @media only screen and (max-width: 400px) {
+      width: 28rem;
+    }
+
     .img__front {
       display: block;
       border-radius: 9px;
       overflow: hidden;
-      box-shadow: 0 30px 30px 0 rgba($color--very_dark_violet, 0.2);
+      box-shadow: 0 24px 36px 0 rgba($color--very_dark_violet, 0.2);
+      width: 100%;
     }
 
     .data {
@@ -26,8 +53,20 @@
       @include flexCenter;
       justify-content: space-between;
 
+      @media only screen and (max-width: 750px) {
+        padding: 2rem;
+      }
+
       .logo {
         align-self: flex-start;
+
+        @media only screen and (max-width: 800px) {
+          width: 6rem;
+        }
+
+        @media only screen and (max-width: 750px) {
+          width: 6rem;
+        }
       }
 
       &__body {
@@ -37,10 +76,41 @@
         grid-template-columns: repeat(2, 1fr);
         row-gap: 2.4rem;
 
+        @media only screen and (max-width: 900px) {
+          row-gap: 1rem;
+        }
+
+        @media only screen and (max-width: 800px) {
+          row-gap: 1.6rem;
+        }
+
         .number {
           grid-column: 1 / -1;
           font-size: 2.8rem;
           letter-spacing: 4px;
+          text-align: left;
+          justify-self: flex-start;
+
+          @media only screen and (max-width: 1200px) {
+            font-size: 3rem;
+          }
+
+          @media only screen and (max-width: 1000px) {
+            font-size: 2.3rem;
+          }
+
+          @media only screen and (max-width: 900px) {
+            font-size: 1.9rem;
+          }
+
+          @media only screen and (max-width: 800px) {
+            letter-spacing: 3px;
+          }
+
+          @media only screen and (max-width: 750px) {
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+          }
         }
 
         .name {
@@ -48,6 +118,15 @@
           font-size: 1.4rem;
           text-transform: uppercase;
           letter-spacing: 2px;
+          font-weight: $fw--regular;
+
+          @media only screen and (max-width: 750px) {
+            font-size: 1rem;
+          }
+
+          @media only screen and (max-width: 750px) {
+            letter-spacing: 1px;
+          }
         }
 
         .expiry {
@@ -55,6 +134,15 @@
           font-size: 1.4rem;
           text-transform: uppercase;
           letter-spacing: 1px;
+          font-weight: $fw--regular;
+
+          @media only screen and (max-width: 751px) {
+            font-size: 1rem;
+          }
+
+          @media only screen and (max-width: 750px) {
+            letter-spacing: 1px;
+          }
         }
       }
     }
@@ -64,11 +152,36 @@
     justify-self: flex-end;
     position: relative;
 
+    @media only screen and (max-width: 1200px) {
+      width: 48rem;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      width: 40rem;
+    }
+
+    @media only screen and (max-width: 900px) {
+      width: 36rem;
+    }
+
+    @media only screen and (max-width: 750px) {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      justify-self: center;
+      width: 30rem;
+      transform: translate(3rem, 4.6rem);
+    }
+
+    @media only screen and (max-width: 400px) {
+      width: 28rem;
+    }
+
     .img__back {
       display: block;
       border-radius: 9px;
       overflow: hidden;
-      box-shadow: 0 30px 30px 0 rgba($color--very_dark_violet, 0.2);
+      box-shadow: 0 24px 36px 0 rgba($color--very_dark_violet, 0.2);
+      width: 100%;
     }
 
     .cvc {
@@ -78,6 +191,29 @@
       font-size: 1.6rem;
       letter-spacing: 2px;
       color: $color--white;
+
+      @media only screen and (max-width: 1200px) {
+        top: 11.8rem;
+      }
+
+      @media only screen and (max-width: 1000px) {
+        top: 9.6rem;
+      }
+
+      @media only screen and (max-width: 900px) {
+        top: 8.6rem;
+      }
+
+      @media only screen and (max-width: 750px) {
+        top: 7.4rem;
+        font-size: 1rem;
+        right: 3.6rem;
+      }
+
+      @media only screen and (max-width: 400px) {
+        top: 6.8rem;
+        letter-spacing: 1px;
+      }
     }
   }
 }

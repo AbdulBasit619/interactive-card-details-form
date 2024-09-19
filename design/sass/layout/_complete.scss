@@ -11,9 +11,21 @@
   @include flexCenter(column);
   gap: 4rem;
 
+  @media only screen and (max-width: 750px) {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    margin-left: 0;
+  }
+
   .confirmed {
     @include flexCenter(column);
     gap: 2rem;
+
+    .icon__complete {
+      @media only screen and (max-width: 750px) {
+        margin-bottom: 2rem;
+      }
+    }
 
     .heading--secondary {
       font-weight: $fw--medium;
