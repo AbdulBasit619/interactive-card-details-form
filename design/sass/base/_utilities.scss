@@ -11,6 +11,7 @@ input {
   padding: 1rem 1.6rem;
   border-radius: 8px;
   border: 1px solid $color--light_grayish_violet;
+  transition: all 0.3s;
 
   &::placeholder {
     color: $color--light_grayish_violet;
