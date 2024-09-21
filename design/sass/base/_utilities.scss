@@ -21,9 +21,7 @@ input {
 
   &:active,
   &:focus {
-    border-width: 1px;
-    border-style: solid;
-    border-image: $gradient--border 1;
+    border: 1px solid $color--very_dark_violet;
   }
 }
 
