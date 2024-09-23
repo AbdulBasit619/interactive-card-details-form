@@ -1,9 +1,9 @@
-//////////////////////////////
-//// Activating strict Mode
+///////////////////////////
+//// Activating strict mode
 
 'use strict';
 
-///////////////////////////////
+///////////////////////////
 //// SELECTING ELEMENTS
 const numberInCard = document.querySelector('.number');
 const nameInCard = document.querySelector('.name');
@@ -26,7 +26,7 @@ const btnConfirm = document.querySelector('.btn__submit');
 const form = document.querySelector('.form');
 const submitted = document.querySelector('.submitted');
 
-///////////////////////////////
+///////////////////////////
 //// IMPLEMENTING FUNCTIONALITY
 
 const numberRegex = /^\d{4} \d{4} \d{4} \d{4}$/;
@@ -41,14 +41,11 @@ inputExpiryMonth.addEventListener('input', function (e) {
   if (!e.target.value) return (expiryMonthInCard.textContent = '00');
   if (e.target.value > 12 || e.target.value.length > 2)
     return (e.target.value = e.target.value.slice(0, -1));
-  expiryMonthInCard.textContent = Math.trunc(e.target.value);
+  expiryMonthInCard.textContent = e.target.value;
 });
 
 inputExpiryYear.addEventListener('input', function (e) {
-  if (!e.target.value) {
-    expiryYearInCard.textContent = '00';
-    return;
-  }
+  if (!e.target.value) return (expiryYearInCard.textContent = e.target.value);
 
   expiryYearInCard.textContent = e.target.value;
 });
@@ -61,7 +58,6 @@ inputCVC.addEventListener('input', function (e) {
 inputNumber.addEventListener('input', function (e) {
   if (!e.target.value)
     return (numberInCard.textContent = '0000 0000 0000 0000');
-
   numberInCard.textContent = e.target.value;
 });
 
@@ -77,6 +73,7 @@ form.addEventListener('submit', function (e) {
     inputNumber.style.borderColor = 'hsl(278, 68%, 11%)';
     msgErrorNumber.classList.add('d__hidden');
   }
+
   if (
     !dateRegex.test(inputExpiryMonth.value) ||
     !dateRegex.test(inputExpiryYear.value)
@@ -84,15 +81,21 @@ form.addEventListener('submit', function (e) {
     msgErrorExpiry.classList.remove('d__hidden');
   }
 
-  if (!dateRegex.test(inputExpiryMonth.value))
+  if (!dateRegex.test(inputExpiryMonth.value)) {
     inputExpiryMonth.style.borderColor = 'hsl(0, 100%, 66%)';
-  if (dateRegex.test(inputExpiryMonth.value))
-    inputExpiryMonth.style.borderColor = 'hsl(278, 68%, 11%)';
+  }
 
-  if (!dateRegex.test(inputExpiryYear.value))
+  if (dateRegex.test(inputExpiryMonth.value)) {
+    inputExpiryMonth.style.borderColor = 'hsl(278, 68%, 11%)';
+  }
+
+  if (!dateRegex.test(inputExpiryYear.value)) {
     inputExpiryYear.style.borderColor = 'hsl(0, 100%, 66%)';
-  if (dateRegex.test(inputExpiryYear.value))
+  }
+
+  if (dateRegex.test(inputExpiryYear.value)) {
     inputExpiryYear.style.borderColor = 'hsl(278, 68%, 11%)';
+  }
 
   if (
     dateRegex.test(inputExpiryMonth.value) &&
@@ -104,6 +107,7 @@ form.addEventListener('submit', function (e) {
   if (!cvcRegex.test(inputCVC.value)) {
     msgErrorCVC.classList.remove('d__hidden');
     inputCVC.style.borderColor = 'hsl(0, 100%, 66%)';
+    return;
   }
 
   if (cvcRegex.test(inputCVC.value)) {
@@ -116,7 +120,10 @@ form.addEventListener('submit', function (e) {
     !inputNumber.value ||
     !inputExpiryMonth.value ||
     !inputExpiryYear.value ||
-    !inputCVC.value
+    !inputCVC.value ||
+    !cvcRegex.test(inputCVC.value) ||
+    !dateRegex.test(inputExpiryMonth.value) ||
+    !numberRegex.test(inputNumber.value)
   ) {
     return;
   }
